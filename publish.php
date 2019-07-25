@@ -11,7 +11,9 @@
 <body>
     <form action="save.php" method="post">
         <h2>简历发布</h2>
+
         <p><input type="text" placeholder = "请输入简历的标题." name = "title"></p>
+        
         <p><textarea name="content" cols="30" rows="10" placeholder = "在这里输入简历的内容."></textarea></p>
 
         <p><input type="submit" value = "保存"></p>
