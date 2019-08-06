@@ -132,6 +132,163 @@
         echo "没啥讲的，挺简单";
     ?>
     
+    <div id="div1">
+        PHP数组
+    </div>
+    <style>
+    #div1{
+        padding:10px;
+        border: 1px dashed #000000;
+        width: 900px;
+        margin-top:10px;
+        margin-bottom: 10px;
+        font-size:20px;
+        }
+    </style>
+    <?php
+        $car = array("Volve", "BMW", "Toyota");
+        echo "the length of array is :" .count($car);
+        echo "<br>";
+
+        $arraylength = count($car);
+        for($x = 0; $x < $arraylength; $x++)
+        {
+            echo $car[$x];
+            echo "<br>";
+        }
+
+        $age=array("Peter"=>"35","Ben"=>"37","Joe"=>"43"); 
+
+        foreach($age as $x=>$x_value) 
+        { 
+            //每一次循环，都会讲当前元素的值赋予x_value， 而健值赋予$x.为啥？因为关联数组中，前面的就是健值，后面的是值
+            echo "Key=" . $x . ", Value=" . $x_value; 
+            echo "<br>"; 
+        } 
+
+        foreach($age as $x)
+        {
+            //对于关联数组，仍然是输出数组值。因为每一次循环，都是将当前数组值赋予$x，无论这个变量取名什么。
+            echo "看看我是谁？ ：".$x;
+            echo "<br>";
+        }
+        
+        sort($car);
+        print_r($car);
+        echo "<br>";
+
+        $numbers = array(32,65,87,9,100,37,54);
+        print_r($numbers);
+        echo "<br>";
+        
+        sort($numbers);
+        print_r($numbers);
+        echo "<br>";
+
+        rsort($numbers);
+        print_r($numbers);
+        echo "<br>";
+        
+        $a = array('a',3=>'b', 1=>'c','d');
+        echo $a[4];
+    ?>
+    <div id="div1">
+        PHP表单
+    </div>
+    <style>
+    #div1{
+        padding:10px;
+        border: 1px dashed #000000;
+        width: 900px;
+        margin-top:10px;
+        margin-bottom: 10px;
+        font-size:20px;
+        }
+    </style>
+    欢迎
+    <?php
+        #PHP中的$_GET和$_POST变量用于检索表单中的信息，比如用户的输入
+        echo $_POST["fname"];
+        //echo '<br>';
+    ?>
+    <br>
+    你的年龄是
+    <?php
+        echo $_POST["fage"];
+        echo '<br>';
+    ?>
+
+    <?php
+        $q = isset($_POST['q'])? htmlspecialchars($_POST['q']):'';
+        if($q){
+            if($q =='RUNOOB'){
+                echo '菜鸟教程<br>http://www.runoob.com';
+                echo '<br>';
+            }
+            else if($q =='GOOGLE'){
+                echo 'Google 搜索: http://www.google.com';
+                echo '<br>';
+            }
+            else if($q =='TAOBAO'){
+                echo '淘宝<br> http://www.taobao.com';
+                echo '<br>';
+            }
+        }
+    ?>
+
+    <?php
+        $p = isset($_POST['p'])? $_POST['p'] : '';
+        if(is_array($p)){
+            $sites = array(
+                'RUNOOB' => 'http://www.runoob.com',
+                'GOOGLE' => 'http://www.google.com',
+                'TAOBAO' => 'http://www.taobao.com',
+            );
+            foreach($p as $val){
+                //PHP_EOL为常量，用于换行
+                echo $sites[$val];
+                echo '<br>';
+            }
+        }
+    ?>
+
+    <?php
+        //$s = isset($_POST['s'])? htmlspecialchars($_POST['s']):'';
+        $s = isset($_POST['s'])? $_POST['s']:'';
+        echo '<br>';
+        //echo $_POST['s'];
+        echo '<br>';
+        if($s){
+            if($s == 'RUNOOB'){
+                echo 'http://www.runoob.com';
+            }
+            else if($s =='GOOGLE'){
+                echo 'http://www.google.com';
+            }
+            else if($s == 'TAOBAO'){
+                echo 'http://www.taobao.com';
+            }
+        }
+        else{
+            echo '未作任何选择，请三选一';
+            echo '<br>';
+        }
+    ?>
+    <?php
+        $r = isset($_POST['r'])? $_POST['r']:'';
+        if(is_array($r)){
+            $sites = array(
+                'RUNOOB' => 'http://www.runoob.com',
+                'GOOGLE' => 'http://www.google.com',
+                'TAOBAO' => 'http://www.taobao.com',
+            );
+            foreach($r as $val)
+            {
+                echo $sites[$val];
+                echo '<br>';
+            }
+        }
+    ?>
 </body>
 </html>
 

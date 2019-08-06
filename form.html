@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+</head>
+<body>
+    <form action="LearningPHP.php" method = "post">
+        名字：<input type="text" name = "fname">
+        年龄: <input type="text" name ="fage">
+        <br>
+        <br>
+        <select name="q">
+            <option value = "">选择一个站点：</option>
+            <option value="RUNOOB">Runoob</option>
+            <option value="GOOGLE">GOOGLE</option>
+            <option value="TAOBAO">TAOBAO</option>
+        </select>
+        <br>
+        <br>
+        <select name="p[]" multiple = "multiple">
+            <option value="">选择一个站点:</option>
+            <option value="RUNOOB">RUNOOB</option>
+            <option value="GOOGLE">GOOGLE</option>
+            <option value="TAOBAO">TAOBAO</option>
+        </select>
+        <br>
+        <br>
+        <input type="radio" name="s" value="RUNOOB"/>Runoob
+        <input type="radio" name="s" value="GOOGLE"/>Google
+        <input type="radio" name="s" value="TAOBAO"/>Taobao
+
+        <br>
+        <br>
+        <input type="checkout" name="r[]" value="RUNOOB"> Runoob<br>
+        <input type="checkout" name="r[]" value="GOOGLE"> Google <br>
+        <input type="checkout" name="r[]" value="TAOBAO"> taobao <br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
